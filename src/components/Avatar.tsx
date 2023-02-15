@@ -5,12 +5,12 @@ import { Database } from 'src/util/database.types'
 type Profiles = Database['public']['Tables']['Profiles']['Row']
 
 export default function Avatar({
-  //uid,
+  uid,
   url,
   size,
   onUpload,
 }: {
-  //uid: string
+  uid: string
   url: Profiles['avatar_url']
   size: number
   onUpload: (url: string) => void
@@ -46,18 +46,18 @@ export default function Avatar({
 
       const file = event.target.files[0]
       const fileExt = file.name.split('.').pop()
-      //const fileName = `${uid}.${fileExt}`
-      //const filePath = `${fileName}`
+      const fileName = `${uid}.${fileExt}`
+      const filePath = `${fileName}`
 
       let { error: uploadError } = await supabase.storage
         .from('avatars')
-        //.upload(filePath, file, { upsert: true })
+        .upload(filePath, file, { upsert: true })
 
       if (uploadError) {
         throw uploadError
       }
 
-      //onUpload(filePath)
+      onUpload(filePath)
     } catch (error) {
       alert('Error uploading avatar!')
       console.log(error)
