@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col, Image } from 'react-bootstrap'
 import { useSupabaseClient } from '@supabase/auth-helpers-react'
-import { Database } from '../utils/database.types'
-type Profiles = Database['public']['Tables']['profiles']['Row']
+import { Database } from 'src/util/database.types'
+type Profiles = Database['public']['Tables']['Profiles']['Row']
 
 export default function Avatar({
   uid,
