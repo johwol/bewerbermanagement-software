@@ -85,7 +85,7 @@ export default function Account({ session }: { session: Session }) {
       <Row>
       <Col lg={2} xs={2}>
         <Avatar
-        uid={user.id}
+        //uid={user.id}
         url={avatar_url}
         size={90}
         onUpload={(url) => {

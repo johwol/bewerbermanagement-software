@@ -5,12 +5,12 @@ import { Database } from 'src/util/database.types'
 type Profiles = Database['public']['Tables']['Profiles']['Row']
 
 export default function Avatar({
-  uid,
+  //uid,
   url,
   size,
   onUpload,
 }: {
-  uid: string
+  //uid: string
   url: Profiles['avatar_url']
   size: number
   onUpload: (url: string) => void
